@@ -1,4 +1,15 @@
 ---
+- name: install firewalld
+  yum:
+      name: firewalld
+      state: present
+
+- name: enable firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+    
 - name: Place services
   copy:
     src: services/
